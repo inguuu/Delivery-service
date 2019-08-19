@@ -1,4 +1,4 @@
-# Delivery service Server
+# Delivery Service Server
 
 API 문서 : https://github.com/inguuu/Delivery-service/wiki
 
