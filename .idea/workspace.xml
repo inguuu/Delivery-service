@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7fc2805a-ce9b-4874-a57a-a76c98a7c0b3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/dto/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/model/SigninRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/model/SigninRes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
@@ -80,7 +82,7 @@
       <updated>1566371689382</updated>
       <workItem from="1566371695781" duration="1747000" />
       <workItem from="1566373476675" duration="2879000" />
-      <workItem from="1566450319038" duration="625000" />
+      <workItem from="1566450319038" duration="1309000" />
     </task>
     <servers />
   </component>

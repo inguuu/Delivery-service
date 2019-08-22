@@ -2,6 +2,7 @@ package com.example.deliver.api;
 
 import com.example.deliver.dto.User;
 import com.example.deliver.model.DefaultRes;
+import com.example.deliver.model.SigninReq;
 import com.example.deliver.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,9 +20,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/board")
-    public String board() {
-        return "1";
+    @PostMapping("/signin")
+    public ResponseEntity signin(@RequestBody SigninReq signinReq) {
+        try {
+            return new ResponseEntity<>(userService.signin(signinReq), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            DefaultRes<Object> ISR = new DefaultRes<>(HttpStatus.INTERNAL_SERVER_ERROR,"서버 내부 오류" );
+            return new ResponseEntity<>(ISR, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @PostMapping("/signup")
