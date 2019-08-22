@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public DefaultRes signup(User user) {
+        // 추가적인 디비에서 일치여부 확인해야 함
         userMapper.signup(user);
         return DefaultRes.res(HttpStatus.OK.value(), "회원가입 성공");
     }
