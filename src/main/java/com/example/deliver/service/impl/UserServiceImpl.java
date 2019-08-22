@@ -20,9 +20,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public DefaultRes<SigninReq> signin(SigninReq signinReq) {
-        userMapper.
-        return DefaultRes.res(HttpStatus.OK.value(), "등록 성공");
+    public DefaultRes<Object> signin(SigninReq signinReq) {
+        User user = userMapper.signin(signinReq);
+        if(user==null) {
+            return DefaultRes.res(204, "id나 패스워드가 틀렸습니다.");
+        }else{
+
+            return DefaultRes.res(HttpStatus.OK.value(), "등록 성공"{user.getId(),user.getAddress());
+        }
+
     }
 
     @Override

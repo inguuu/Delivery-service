@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserService {
 
-    DefaultRes<SigninReq> signin(SigninReq signinReq);
+    DefaultRes<Object> signin(SigninReq signinReq);
     DefaultRes signup(User user);
 
 
