@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserMapper {
-    @Insert("INSERT INTO User(id,pw,name) VALUES(#{user.id},#{user.pw},#{user.name})")
+    @Insert("INSERT INTO User(id,pw,name,address) VALUES(#{user.id},#{user.pw},#{user.name},#{user.address})")
     void signup(@Param("user") User user);
 }

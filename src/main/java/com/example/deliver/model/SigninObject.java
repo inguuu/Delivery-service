@@ -1,13 +1,12 @@
-package com.example.deliver.dto;
+package com.example.deliver.model;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class User {
+public class SigninObject {
     private String id;
     private String pw;
-    private String name;
-    private String address;
 }
