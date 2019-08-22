@@ -3,6 +3,7 @@ package com.example.deliver.service.impl;
 import com.example.deliver.dto.User;
 import com.example.deliver.mapper.UserMapper;
 import com.example.deliver.model.DefaultRes;
+import com.example.deliver.model.SigninReq;
 import com.example.deliver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public DefaultRes<User> signin(String id, String pw) {
-        return null;
+    public DefaultRes<SigninReq> signin(SigninReq signinReq) {
+        userM
+        return DefaultRes.res(HttpStatus.OK.value(), "등록 성공");
     }
 
     @Override
