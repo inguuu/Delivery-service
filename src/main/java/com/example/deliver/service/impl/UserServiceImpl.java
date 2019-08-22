@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public DefaultRes<SigninReq> signin(SigninReq signinReq) {
-        userM
+        userMapper.
         return DefaultRes.res(HttpStatus.OK.value(), "등록 성공");
     }
 
