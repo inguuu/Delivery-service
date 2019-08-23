@@ -6,12 +6,15 @@ import com.example.deliver.model.ReviewReq;
 import com.example.deliver.repository.ReviewRepository;
 import com.example.deliver.service.S3FileUploadService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.management.Query;
 import java.io.IOException;
 
 @Slf4j
@@ -50,8 +53,11 @@ public class ReviewController {
 //        return null;
 //
 //    }
+
+
     @GetMapping("/review/{storeIdx}/{id}")
     public ResponseEntity mongotest3(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
+
 
         Iterable<Review> reviewlist = reviewRepository.findByStoreIdxAndId(storeIdx,id);
         DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"성공",reviewlist );

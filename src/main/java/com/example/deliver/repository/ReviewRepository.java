@@ -12,5 +12,4 @@ public interface ReviewRepository extends MongoRepository<Review,Integer> {
 
     List<Review> findByStoreIdxAndId(int storeIdx,String id);
 
-
 }
