@@ -1,0 +1,17 @@
+package com.example.deliver.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
+
+
+@Data
+@AllArgsConstructor
+public class ReviewReq {
+    private int storeIdx;
+    private String id;
+    private String img;
+    private String content;
+    private Double ratng;
+    private MultipartFile imgFile;
+}

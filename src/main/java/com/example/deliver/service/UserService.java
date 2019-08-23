@@ -14,6 +14,4 @@ public interface UserService {
     DefaultRes<SigninRes> signin(SigninReq signinReq);
     DefaultRes signup(User user);
 
-
-
 }
