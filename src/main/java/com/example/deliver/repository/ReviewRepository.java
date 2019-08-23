@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-public interface MongoDBRepository extends MongoRepository<Review,Integer> {
+public interface ReviewRepository extends MongoRepository<Review,Integer> {
 
-    List<Review> findByStoreIdx(int storeIdx);
+    List<Review> findByStoreIdxAndId(int storeIdx,String id);
+
 
 }
