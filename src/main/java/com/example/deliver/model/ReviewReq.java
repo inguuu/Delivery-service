@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @AllArgsConstructor
 public class ReviewReq {
-
     private int storeIdx;
     private String id;
     private String img;
