@@ -45,14 +45,15 @@ public class ReviewController {
         return new ResponseEntity<>(sm, HttpStatus.OK);
 
     }
-//    @DeleteMapping("/review/{storeIdx}/{id}")
-//    public ResponseEntity mongotest2() {
-//        com.example.mongotest.model.Board board1 = new com.example.mongotest.model.Board();
-//        board1.setContentIdx(1);// 뭘 지울지 기준을 준다.
-//        mongoRepository.delete(board1);
-//        return null;
-//
-//    }
+    @DeleteMapping("/review/{storeIdx}/{id}")
+    public ResponseEntity mongotest2(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
+        Review reviewr = new Review();
+        reviewr.setStoreIdx(storeIdx);
+        reviewr.setId(id);
+        DefaultRes<Review> sm = new DefaultRes<>(HttpStatus.OK,"리뷰 삭제 성공");
+        return new ResponseEntity<>(sm, HttpStatus.OK);
+
+    }
 
 
     @GetMapping("/review/{storeIdx}/{id}")
@@ -60,7 +61,7 @@ public class ReviewController {
 
 
         Iterable<Review> reviewlist = reviewRepository.findByStoreIdxAndId(storeIdx,id);
-        DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"성공",reviewlist );
+        DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"리뷰 조회 성공",reviewlist );
         return new ResponseEntity<>(sm, HttpStatus.OK);
 
     }
