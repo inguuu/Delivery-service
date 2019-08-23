@@ -59,7 +59,6 @@ public class ReviewController {
     @GetMapping("/review/{storeIdx}/{id}")
     public ResponseEntity mongotest3(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
 
-
         Iterable<Review> reviewlist = reviewRepository.findByStoreIdxAndId(storeIdx,id);
         DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"리뷰 조회 성공",reviewlist );
         return new ResponseEntity<>(sm, HttpStatus.OK);
