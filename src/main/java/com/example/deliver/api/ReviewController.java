@@ -1,25 +1,30 @@
 package com.example.deliver.api;
 
 import com.example.deliver.domain.Review;
+import com.example.deliver.model.DefaultRes;
+import com.example.deliver.model.ReviewReq;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @RestController
 public class ReviewController {
     private final MongoRepository mongoRepository;
+    private final S3FileUploadService s3FileUploadService;
 
     public ReviewController(MongoRepository mongoRepository) {
         this.mongoRepository = mongoRepository;
     }
 
     @PostMapping("/review")
-    public ResponseEntity mongotest(@RequestBody ReviewReq review) {
+    public ResponseEntity mongotest( ReviewReq reviewReq, @RequestPart(value ="imgFile",required = false) MultipartFile imgFile) {
 
-        log.info("====================="+board.getTitle());
+        reviewReq.setUrl(s3FileUploadService.upload(boardreq.getProfile()));
+        if(imgFile!= null) reviewReq.setImg(imgFile);
         mongoRepository.save(board);
         DefaultRes<Board> sm = new DefaultRes<>(HttpStatus.OK,"성공" );
         return new ResponseEntity<>(sm, HttpStatus.OK);
