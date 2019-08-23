@@ -5,6 +5,7 @@ import com.example.deliver.model.DefaultRes;
 import com.example.deliver.model.ReviewReq;
 import com.example.deliver.service.S3FileUploadService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class ReviewController {
 
     @PostMapping("/review")
     public ResponseEntity mongotest( ReviewReq reviewReq, @RequestPart(value ="imgFile",required = false) MultipartFile imgFile) throws IOException {
-        
+
         Review review = new Review();
         review.setContent(reviewReq.getContent());
         review.setId(reviewReq.getId());
@@ -45,12 +46,12 @@ public class ReviewController {
 //        return null;
 //
 //    }
-//    @GetMapping("/review/{storeIdx}/{id}")
-//    public ResponseEntity mongotest3() {
-//
-//        Iterable<com.example.mongotest.model.Board> boardlist = mongoRepository.findAll();
-//        DefaultRes<Iterable<com.example.mongotest.model.Board>> sm = new DefaultRes<Iterable<com.example.mongotest.model.Board>>(HttpStatus.OK.value(),"성공",boardlist );
-//        return new ResponseEntity<>(sm, HttpStatus.OK);
-//
-//    }
+    @GetMapping("/review/{storeIdx}/{id}")
+    public ResponseEntity mongotest3(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
+
+        Iterable<Review> reviewlist = mongoRepository.finb
+        DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"성공",reviewlist );
+        return new ResponseEntity<>(sm, HttpStatus.OK);
+
+    }
 }

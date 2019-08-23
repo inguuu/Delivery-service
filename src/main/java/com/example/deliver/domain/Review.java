@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Review {
     @Id
     private  int reviewIdx;
+    private int storeIdx;
     private  String id;
     private String img;
     private String content;
