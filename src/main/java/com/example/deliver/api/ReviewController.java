@@ -26,8 +26,7 @@ public class ReviewController {
 
     @PostMapping("/review")
     public ResponseEntity mongotest( ReviewReq reviewReq, @RequestPart(value ="imgFile",required = false) MultipartFile imgFile) throws IOException {
-
-
+        
         Review review = new Review();
         review.setContent(reviewReq.getContent());
         review.setId(reviewReq.getId());
