@@ -6,9 +6,11 @@ import com.example.deliver.mapper.MenuMapper;
 import com.example.deliver.model.DefaultRes;
 import com.example.deliver.service.MenuService;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MenuServiceImpl implements MenuService {
 
     private final MenuMapper menuMapper;
