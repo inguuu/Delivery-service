@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fc2805a-ce9b-4874-a57a-a76c98a7c0b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/BannerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/BannerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/deliver/api/ReviewController.java" afterDir="false" />
-    </list>
+    <list default="true" id="7fc2805a-ce9b-4874-a57a-a76c98a7c0b3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,7 @@
       <workItem from="1566450319038" duration="2160000" />
       <workItem from="1566544737750" duration="5965000" />
       <workItem from="1566550724475" duration="4116000" />
-      <workItem from="1567064783363" duration="6610000" />
+      <workItem from="1567064783363" duration="7220000" />
     </task>
     <servers />
   </component>
