@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Store {
+    private int storeIdx;
     private int storeType;
     private String storeName;
     private String storeImg;
