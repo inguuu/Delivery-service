@@ -34,34 +34,53 @@ public class ReviewController {
     @PostMapping("/review")
     public ResponseEntity mongotest( ReviewReq reviewReq, @RequestPart(value ="imgFile",required = false) MultipartFile imgFile) throws IOException {
 
-        Review review = new Review();
-        review.setStoreIdx(reviewReq.getStoreIdx());
-        review.setContent(reviewReq.getContent());
-        review.setId(reviewReq.getId());
-        review.setRatng(reviewReq.getRatng());
-        review.setImg(s3FileUploadService.upload(imgFile));
-        reviewRepository.save(review);
-        DefaultRes<Review> sm = new DefaultRes<>(HttpStatus.OK,"리뷰 등록 성공" );
-        return new ResponseEntity<>(sm, HttpStatus.OK);
+
+        try {
+            Review review = new Review();
+            review.setStoreIdx(reviewReq.getStoreIdx());
+            review.setContent(reviewReq.getContent());
+            review.setId(reviewReq.getId());
+            review.setRatng(reviewReq.getRatng());
+            review.setImg(s3FileUploadService.upload(imgFile));
+            reviewRepository.save(review);
+            DefaultRes<Review> sm = new DefaultRes<>(HttpStatus.OK,"리뷰 등록 성공" );
+            return new ResponseEntity<>(sm, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            DefaultRes<Object> ISR = new DefaultRes<>(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류");
+            return new ResponseEntity<>(ISR, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
 
     }
     @DeleteMapping("/review/{storeIdx}/{id}")
     public ResponseEntity mongotest2(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
+        try {
         Review reviewr = new Review();
         reviewr.setStoreIdx(storeIdx);
         reviewr.setId(id);
         DefaultRes<Review> sm = new DefaultRes<>(HttpStatus.OK,"리뷰 삭제 성공");
         return new ResponseEntity<>(sm, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            DefaultRes<Object> ISR = new DefaultRes<>(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류");
+            return new ResponseEntity<>(ISR, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
     }
 
 
     @GetMapping("/review/{storeIdx}/{id}")
     public ResponseEntity mongotest3(@RequestParam("storeIdx") int storeIdx,@RequestParam("id") String id) {
-
+        try {
         Iterable<Review> reviewlist = reviewRepository.findByStoreIdxAndId(storeIdx,id);
         DefaultRes<Iterable<Review>> sm = new DefaultRes<Iterable<Review>>(HttpStatus.OK.value(),"리뷰 조회 성공",reviewlist );
         return new ResponseEntity<>(sm, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            DefaultRes<Object> ISR = new DefaultRes<>(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류");
+            return new ResponseEntity<>(ISR, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
     }
 }

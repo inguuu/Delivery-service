@@ -1,5 +1,6 @@
 package com.example.deliver.api;
 
+import com.example.deliver.model.DefaultRes;
 import com.example.deliver.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,14 @@ public class CategoryController {
     @GetMapping("/main/category/{categoryIdx}")
     public ResponseEntity getCategory(@PathVariable("categoryIdx") int categoryIdx) {
           log.info(categoryIdx+"");
-        return new ResponseEntity<>(categoryService.getCategoryList(categoryIdx), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(categoryService.getCategoryList(categoryIdx), HttpStatus.OK);
+        }catch (Exception e) {
+            e.printStackTrace();
+            DefaultRes<Object> ISR = new DefaultRes<>(HttpStatus.INTERNAL_SERVER_ERROR, "서버 내부 오류");
+            return new ResponseEntity<>(ISR, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
 
     }
 }
