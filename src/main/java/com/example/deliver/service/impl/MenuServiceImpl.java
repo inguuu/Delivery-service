@@ -19,7 +19,7 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public DefaultRes<List<Menu>> getMenu(int storeIdx) {
-        List<Menu> menulist = menuMapper.getMenulist(storeIdx)
+        List<Menu> menulist = menuMapper.getMenulist(storeIdx);
         if (menulist.isEmpty()) {
             return DefaultRes.res(204, "등록된 메뉴가 없습니다.");
         } else {
