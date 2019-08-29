@@ -7,11 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
 import java.util.Locale;
 
 @Mapper
 public interface CategoryMapper {
 
-    @Select("SELECT * FROM Category JOIN CategoryList WHERE categoryIdx =#{category.idx} ")
-    CategoryList getCategorylit(@Param("category") CategoryList categorylist);
+    @Select("SELECT * FROM Category JOIN CategoryList WHERE categoryIdx =#{categoryIdx} ")
+    List<CategoryList> getCategorylist(@Param("categoryIdx") int categoryIdx);
 }

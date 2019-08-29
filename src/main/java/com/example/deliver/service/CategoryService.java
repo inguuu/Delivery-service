@@ -5,7 +5,9 @@ import com.example.deliver.model.DefaultRes;
 import com.example.deliver.model.SigninReq;
 import com.example.deliver.model.SigninRes;
 
+import java.util.List;
+
 public interface CategoryService {
 
-    DefaultRes<CategoryList> category(CategoryList categoryList);
+    DefaultRes<List<CategoryList>> getCategoryList(CategoryList category);
 }
