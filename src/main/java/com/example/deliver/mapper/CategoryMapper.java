@@ -13,6 +13,6 @@ import java.util.Locale;
 @Mapper
 public interface CategoryMapper {
 
-    @Select("SELECT * FROM Category JOIN CategoryList WHERE categoryIdx =#{categoryIdx} ")
-    List<CategoryList> getCategorylist(@Param("categoryIdx") int categoryIdx);
+    @Select("SELECT * FROM CategoryList WHERE categoryId = #{categoryId}")
+    List<CategoryList> getCategorylist(@Param("categoryId") int categoryIdx);
 }
