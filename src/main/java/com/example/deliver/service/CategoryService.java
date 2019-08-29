@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface CategoryService {
 
-    DefaultRes<List<CategoryList>> getCategoryList(CategoryList category);
+    DefaultRes<List<CategoryList>> getCategoryList(int categoryIdx);
 }

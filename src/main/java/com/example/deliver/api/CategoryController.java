@@ -19,7 +19,7 @@ public class CategoryController {
     }
 
     @GetMapping()
-    public ResponseEntity getCategory(@RequestParam int categoryIdx) {
+    public ResponseEntity getCategory(@RequestParam("categoryIdx") int categoryIdx) {
 
         return new ResponseEntity<>(categoryService.getCategoryList(categoryIdx), HttpStatus.OK);
 

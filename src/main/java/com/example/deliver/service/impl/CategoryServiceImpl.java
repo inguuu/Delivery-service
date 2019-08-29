@@ -20,10 +20,11 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryMapper = categoryMapper;
     }
 
-    @Override
-    public DefaultRes<List<CategoryList>> getCategoryList(CategoryList category) {
 
-        List<CategoryList> categoryList = categoryMapper.getCategorylist(category.getCategoryId());
+    @Override
+    public DefaultRes<List<CategoryList>> getCategoryList(int categoryIdx) {
+
+        List<CategoryList> categoryList = categoryMapper.getCategorylist(categoryIdx);
         if (categoryList.isEmpty()) {
             return DefaultRes.res(204, "카테고리가 없습니다.");
         } else {
